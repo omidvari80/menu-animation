@@ -84,4 +84,18 @@ body {
   transition-duration: 850ms;
 }
 
+.main-footer span {
+  transition-delay: 150ms;
+  transition-duration: 1350ms;
+}
+
+.main-footer {
+  font-size: 0.9em;
+  letter-spacing: 0.18rem;
+  margin-bottom: 1.5rem;
+  margin-top: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 /*# sourceMappingURL=index.css.map */
