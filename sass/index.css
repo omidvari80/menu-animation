@@ -1,0 +1,237 @@
+@charset "UTF-8";
+* {
+  padding: 0;
+  border: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style-type: none;
+  text-decoration: none;
+  color: #ccc;
+}
+
+body {
+  background-color: #326586;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  margin: 0 auto;
+  max-width: 1550px;
+  padding-top: .5rem;
+  width: 93%;
+}
+
+.main-header a {
+  letter-spacing: .18rem;
+  text-transform: uppercase;
+}
+
+/*هر دوی این موارد برای قابل مشاهده نگه داشتن #menu-toggle زمانی که فهرست باز است، لازم است.*/
+.masthead {
+  position: relative;
+  z-index: 1000;
+  /********************************/
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.masthead h1 {
+  -webkit-transition-delay: 450ms;
+          transition-delay: 450ms;
+}
+
+.menu-toggle {
+  cursor: pointer;
+  width: 55px;
+  z-index: 3;
+}
+
+.menu-toggle div {
+  background-color: #ccc;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.3);
+  height: 7px;
+  -webkit-transition-duration: 250ms;
+          transition-duration: 250ms;
+  -webkit-transition-timing-function: cubic-bezier(0.13, 0.24, 0.35, 1.64);
+          transition-timing-function: cubic-bezier(0.13, 0.24, 0.35, 1.64);
+}
+
+.menu-toggle .one,
+.menu-toggle .two {
+  margin-bottom: 7px;
+}
+
+.main-contents {
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+}
+
+.main-contents h2 {
+  letter-spacing: 1.5px;
+  margin-bottom: .6rem;
+  text-transform: uppercase;
+}
+
+.main-contents p {
+  font-size: 1.1rem;
+  letter-spacing: 1.7px;
+  line-height: 1.35;
+  color: #ccc;
+  -webkit-transition-delay: 150ms;
+          transition-delay: 150ms;
+  -webkit-transition-duration: 850ms;
+          transition-duration: 850ms;
+}
+
+.main-footer span {
+  -webkit-transition-delay: 150ms;
+          transition-delay: 150ms;
+  -webkit-transition-duration: 1350ms;
+          transition-duration: 1350ms;
+}
+
+.main-footer {
+  font-size: .9em;
+  letter-spacing: .18rem;
+  margin-bottom: 1.5rem;
+  margin-top: 4rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/*Style and animate the nav overlay */
+.main-nav-list::before,
+.main-nav-list::after {
+  background-color: #b94071;
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  width: 0vw;
+  -webkit-transition: all 100ms ease-in-out 300ms;
+  transition: all 100ms ease-in-out 300ms;
+}
+
+.main-nav-list::before {
+  left: 0;
+}
+
+.main-nav-list::after {
+  right: 0;
+}
+
+.main-nav-list ul {
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  z-index: 2000;
+}
+
+.main-nav-list a {
+  display: block;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  opacity: 0;
+  text-align: center;
+  text-transform: uppercase;
+  -webkit-transition-delay: 130ms;
+          transition-delay: 130ms;
+}
+
+.main-nav-list .mobile-hide {
+  display: none;
+}
+
+/*Style the nav elements when active.*/
+.masthead.active h1 {
+  text-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+}
+
+.menu-toggle.active .one {
+  -webkit-box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translate(0, 14px) rotate(45deg);
+          transform: translate(0, 14px) rotate(45deg);
+}
+
+.menu-toggle.active .two {
+  background-color: transparent;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateX(-55px);
+          transform: translateX(-55px);
+}
+
+.menu-toggle.active .three {
+  -webkit-box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
+          box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.4);
+  -webkit-transform: translate(0, -14px) rotate(-45deg);
+          transform: translate(0, -14px) rotate(-45deg);
+}
+
+.main-nav-list.active::before,
+.main-nav-list.active::after {
+  width: 25vw;
+}
+
+.main-nav-list.active ul {
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition-delay: 560ms;
+          transition-delay: 560ms;
+  -webkit-transition-duration: 240ms;
+          transition-duration: 240ms;
+  -webkit-transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 1.4);
+          transition-timing-function: cubic-bezier(0.1, 0.2, 0.3, 1.4);
+}
+
+.main-nav-list.active a {
+  -webkit-transition-delay: 600ms;
+          transition-delay: 600ms;
+  opacity: 1;
+}
+
+/*Just getting silly now */
+.wrapper.active p {
+  color: #326586;
+  -webkit-transition-delay: 150ms;
+          transition-delay: 150ms;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+}
+
+.main-footer.active span {
+  color: #326586;
+  -webkit-transition-duration: 350ms;
+          transition-duration: 350ms;
+}
+/*# sourceMappingURL=index.css.map */
